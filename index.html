@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
+
+	<title>JavaScript problems</title>
+</head>
+<body class="fondo">
+	<header>
+		<nav id="enlaces">
+			<div  class="desplegable">
+				<ul id="principal">
+					<li><h2><a href="index.html" class="pagina">PROBLEMAS PRACTICOS</a></h2></li>
+				</ul>
+				<ul id="menu">
+					<li><a href="https://www.instagram.com/mclrdri15/"><i class="fab fa-instagram "></i></a></li>
+					<li><a href="https://www.facebook.com/mclrdri15/"><i class="fab fa-facebook"></i></a></li>
+					<li><a href="https://github.com/mclrdri15"><i class="fab fa-github"></i></a></li>
+				</ul>
+					<a id="abrir" class="abrir-cerrar" href="javascript:" onclick="mostrar()" style="display: none;"><i class="fas fa-bars"></i></a>
+					<a id="cerrar" class="abrir-cerrar"  href="#" onclick="ocultar()" style="display: inline;"><i class="fas fa-bars"></i></a>
+			</div>		
+		</nav>		
+			
+
+		<div id="sidebar" class="sidebar" style="width: 0px;">
+			<a href="#" class="boton-cerrar" onclick="ocultar()" style="align-items: center;"><i class="fas fa-bars"></i></a>
+			<ul id="side">	
+				<li><a href="ejercicios/mayorYmenor.html">Mayor y Menor</a></li>
+				<li><a href="ejercicios/enRango.html">En Rango</a></li>
+				<li><a href="ejercicios/IlikeTurtles.html">Animal Favorito</a></li>
+			</ul>
+		</div>
+		
+	</header>
+
+	<section  id="banner" class="banner">
+		<section class="banner_tittle">
+			<h2>JAVASCRIPT <br> EJERCICIOS PRÁCTICOS</h2>
+			<p class="mensaje">Esta pagina contiene ejercicios practicos realizados apartir de retos <br> encontrados en <a href="https://platzi.com/comunidad/retos-de-programacion-para-cualquier-lenguaje-segundo-nivel-condicionales/">platzi</a>, para cualquier lenguaje</p>
+		</section>
+		<div id="banner_img" class="banner_img">
+			<img src="img/javascript.gif" alt="javascript">
+		</div>
+	</section>
+
+
+<script>
+	function mostrar() {
+    document.getElementById("sidebar").style.width = "300px";
+    document.getElementById("banner").style.marginRight = "300px";
+    document.getElementById("enlaces").style.marginRight = "300px";
+    document.getElementById("abrir").style.display = "none";
+    document.getElementById("cerrar").style.display = "inline";
+	}
+
+	function ocultar() {
+    document.getElementById("sidebar").style.width = "0";
+    document.getElementById("banner").style.marginRight = "0";
+    document.getElementById("enlaces").style.marginRight = "0";
+    document.getElementById("abrir").style.display = "inline";
+    document.getElementById("cerrar").style.display = "none";
+	}
+</script>
+	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

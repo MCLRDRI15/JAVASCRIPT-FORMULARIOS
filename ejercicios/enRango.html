@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../css/estiloEnRango.css">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
+
+	<script src="../js/jquery.min.js" type="text/javascript"></script>
+
+	<title>NÚMERO EN RANGO</title>
+</head>
+<body class="fondo">
+
+	<header class="header">
+		<h1>
+			<a href="enRango.html" class="nombre">Número dentro del Rango dado</a>
+		</h1>
+		<nav>
+			<a href="../index.html"><b>INICIO</b></a>
+		</nav>
+	</header>
+
+	<section class="ejercicio">
+		<p>Pide al usuario que indique 2 números: uno que servirá como límite y otro para comparar. Si el segundo número es menor al primero, mostrarás un mensaje diciendo “El número ‘x’ se encuentra en el rango, gracias” y en caso contrario dirá “El número ‘x’ excede el límite permitido”.
+		</p>
+	</section>
+
+	<div class="parametro">
+			<h3>EL RANGO DE DATOS ES ENTRE [-1000 & 1000] :</h3>
+	</div>
+	<div class="desarrollo">
+		<p><b>ESCOJA EL RANGO INFERIOR:</b><span class="inferior">-500</span><input type="range" name="numero1" id="numero1" min="-1000" max="0" class="rango1"/></p>
+		<p><b>ESCOJA EL RANGO SUPERIOR:</b><span class="superior">500</span><input type="range" name="numero2" id="numero2" min="1" max="1000" class="rango2"/></p>
+		<p><b>INGRESE EL NUMERO A VERIFICAR:</b><input type="number" name="numeroC" id="numeroC" value="0" min="-1001" max="1001"/></p>
+		<button name="calculo" type="buttom" onclick="mostrarcalculo()">CALCULAR</button>
+	</div>
+
+	<div class="resultado">
+		<h2 class="mensaje-res"><b>RESULTADO:</b></h2>
+		<div class="texto-res">
+			<p><b>El número:</b><output id="resp"></output><br>
+		</div>	
+		<img src="../img/rango.gif" class="math">
+	</div>
+
+	<script type="text/javascript">
+		$('.rango1').on('change',function(){
+		var valor=$('.rango1').val();
+		$('.inferior').text(valor);
+		} )
+
+		$('.rango2').on('change',function(){
+		var valor=$('.rango2').val();
+		$('.superior').text(valor);
+		} )
+
+		function mostrarcalculo(){
+			let numero1 = $('.rango1').val();
+			let numero2 = $('.rango2').val();
+
+			if (document.getElementById("numeroC").value >= numero1 && document.getElementById("numeroC").value <= numero2) {
+				document.getElementById("resp").value =" Se encuentra en el Rango seleccionado, GRACIAS!!";
+			}else{
+				document.getElementById("resp").value = " Excede el limite permitido seleccionado!!";
+			}
+		}
+	</script>
+
+</body>
+</html>

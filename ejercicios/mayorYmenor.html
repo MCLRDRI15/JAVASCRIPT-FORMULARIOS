@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../css/estiloMayorMenor.css">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
+
+	<title>MAYOR Y MENOR</title>
+</head>
+<body class="fondo">
+
+	<header class="header">
+		<h1>
+			<a href="mayorYmenor.html" class="nombre">Número mayor y menor</a>
+		</h1>
+		<nav>
+			<a href="../index.html"><b>INICIO</b></a>
+		</nav>
+	</header>
+
+	<section class="ejercicio">
+		<p>Escribe un programa que pida al usuario 2 números, mostrando como salida cuál es el número mayor y la diferencia de uno respecto al otro. En caso de que los números sean iguales, mostrarlo también en pantalla.</p>
+	</section>
+
+	<div class="desarrollo">
+		<p><b>INGRESE EL PRIMER NÚMERO:</b><input type="number" name="numero1" id="numero1" value="0" min="0"/></p>
+		<p><b>INGRESE EL SEGUNDO NÚMERO:</b><input type="number" name="numero2" id="numero2" value="0" min="0"/></p>
+		<button name="calculo" type="buttom" onclick="mostrarcalculo()">CALCULAR</button>
+	</div>
+
+	<div class="resultado">
+		<h2 class="mensaje-res"><b>RESULTADO:</b></h2>
+		<div class="texto-res">
+			<p><b>El número mayor de los ingresados es:</b><output id="resp"></output><br><b>la diferencia entre el número mayor y el menor es de:</b><output id="diferencia"></output></p>
+		</div>	
+		<img src="../img/math.gif" class="math">
+	</div>
+
+	<script>
+		function mostrarcalculo() {
+
+		var diferencia = 0;
+		var mayor = 0;	
+		var numero1 = document.getElementById("numero1").value;
+		var numero2 = document.getElementById("numero2").value;
+		if (numero1 == numero2) {
+			document.getElementById("resp").value = " Son Iguales";
+			document.getElementById("diferencia").value = 0;
+		}		
+		if (numero1 > numero2) {
+			document.getElementById("resp").value = numero1;
+			diferencia = numero1 - numero2;
+			document.getElementById("diferencia").value = diferencia;
+		}
+		if (numero1 < numero2) {
+			document.getElementById("resp").value = numero2;
+			diferencia = numero2 - numero1;
+			document.getElementById("diferencia").value = diferencia;
+		}
+	}
+	</script>
+
+	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
